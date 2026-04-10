@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PBTI - Programmer Behavioral Type Indicator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    <div class="container">
+        <!-- 首页 -->
+        <section id="home" class="page active">
+            <div class="pixel-border">
+                <h1 class="glitch" data-text="PBTI">PBTI</h1>
+                <p class="subtitle">Programmer Behavioral Type Indicator</p>
+                <p class="tagline">Prompt 工程师认证已过时<br>来看你的真实 AI 人格</p>
+                <div class="pixel-decoration">
+                    <span class="pixel-icon">🤖</span>
+                    <span class="pixel-icon">💻</span>
+                    <span class="pixel-icon">☕</span>
+                </div>
+                <button class="pixel-btn" onclick="startTest()">
+                    <span class="btn-text">开始测试</span>
+                    <span class="btn-arrow">▶</span>
+                </button>
+                <p class="hint">32 题 · 约 3 分钟 · 24 种人格</p>
+            </div>
+        </section>
+
+        <!-- 测试页面 -->
+        <section id="quiz" class="page">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="question-counter">
+                <span id="currentQ">1</span> / <span id="totalQ">32</span>
+            </div>
+            <div class="pixel-border question-box">
+                <h2 id="questionText" class="question-text"></h2>
+                <div id="options" class="options"></div>
+            </div>
+        </section>
+
+        <!-- 加载页面 -->
+        <section id="loading" class="page">
+            <div class="pixel-border center">
+                <div class="loading-text">正在分析你的 AI 人格...</div>
+                <div class="loading-bar">
+                    <div class="loading-fill"></div>
+                </div>
+                <div class="loading-tips" id="loadingTips"></div>
+            </div>
+        </section>
+
+        <!-- 结果页面 -->
+        <section id="result" class="page">
+            <div class="result-card pixel-border">
+                <div class="result-header">
+                    <span class="result-code" id="resultCode">COPY</span>
+                    <h2 class="result-title" id="resultTitle">复制粘贴侠</h2>
+                </div>
+                <div class="result-icon" id="resultIcon">🚀</div>
+                <p class="result-slogan" id="resultSlogan">"能跑就行，出问题再说"</p>
+                <div class="result-desc" id="resultDesc"></div>
+                <div class="result-stats">
+                    <h3>你的 AI 协作画像</h3>
+                    <div class="stat-bars" id="statBars"></div>
+                </div>
+                <div class="result-advice">
+                    <h3>🎯 给队友的相处建议</h3>
+                    <p id="resultAdvice"></p>
+                </div>
+                <div class="result-similar">
+                    <h3>🌟 同类名人</h3>
+                    <p id="resultSimilar"></p>
+                </div>
+                <div class="result-actions">
+                    <button class="pixel-btn" onclick="shareResult()">
+                        <span class="btn-text">分享结果</span>
+                    </button>
+                    <button class="pixel-btn secondary" onclick="retakeTest()">
+                        <span class="btn-text">再测一次</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="pixel-footer">
+        <p>Made with ☕ & AI | 仅供娱乐，勿当真</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="algorithm.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
